@@ -1,0 +1,61 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #002366; /* น้ำเงินเข้ม */
+  display: flex;
+  justify-content: center; /* กึ่งกลางแนวนอน */
+  align-items: center;     /* กึ่งกลางแนวตั้ง */
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  width: 320px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;  /* ถ้าต้องการให้เป็นวงกลม */
+  margin-bottom: 25px;
+  object-fit: cover; /* ถ้าใช้กับ img ให้รูปไม่ผิดสัดส่วน */
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.inputs input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputs button {
+  padding: 12px;
+  background-color: #002366;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inputs button:hover {
+  background-color: #0041a3;
+}
