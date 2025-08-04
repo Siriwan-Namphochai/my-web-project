@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,26 +10,27 @@
 </head>
 
 <body>
- <div class="login-box">
-  <div class="inputs">
-    <input id="username" type="text" placeholder="Username" />
-    <input id="password" type="password" placeholder="Password" />
-    <button onclick="handleLogin()">Login</button>
+  <div class="login-box">
+    <div class="inputs">
+      <input id="username" type="text" placeholder="Username" />
+      <input id="password" type="password" placeholder="Password" />
+      <button onclick="handleLogin()">Login</button>
+    </div>
   </div>
-</div>
- <script>
-  function handleLogin() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+  <script>
+    function handleLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
 
-    if (username === 'Admin' && password === 'Admin12345') {
-        window.location.href = 'home.html'
-      // หรือจะเปลี่ยนหน้า: window.location.href = 'home.html';
-    } else {
-      alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+      if (username === 'Admin' && password === 'Admin12345') {
+        window.location.href = 'Properties.html'
+        // หรือจะเปลี่ยนหน้า: window.location.href = 'home.html';
+      } else {
+        alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>
