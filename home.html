@@ -97,16 +97,23 @@
             <input type="text" id="billerId" placeholder="Biller ID" />
 
             <div class="switch-group">
-              <label for="active">
-                Active
-                <input type="checkbox" id="active" />
-              </label>
+              <div class="switch-item">
+                <label class="switch-label">Active</label>
+                <label class="switch">
+                  <input type="checkbox" id="active">
+                  <span class="slider"></span>
+                </label>
+              </div>
 
-              <label for="fundAccount">
-                Fund Account
-                <input type="checkbox" id="fundAccount" />
-              </label>
-            </div>
+            <div class="switch-item">
+                <label class="switch-label">Fund Account</label>
+                <label class="switch">
+                  <input type="checkbox" id="fundAccount">
+                  <span class="slider"></span>
+                </label>
+  </div>
+</div>
+
           </div>
         </form>
 
