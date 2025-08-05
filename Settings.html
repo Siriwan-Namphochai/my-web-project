@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Property</title>
+  <title>Setting</title>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="Style/home.css" />
@@ -17,17 +17,19 @@
       <div class="logo"></div>
       <nav>
         <ul>
-          <li class="active">
+          <li>
             <a href="Properties.html">
               <i class="fa fa-home"></i> Properties
             </a>
           </li>
           <li> 
+            <li>
             <a href="Member.html">
               <i class="fa fa-users"></i> Members
             </a>
           </li>
           <li> 
+            <li class="active">
             <a href="Settings.html">
               <i class="fa fa-cogs"></i> Settings
             </a>
@@ -57,95 +59,26 @@
 
 
       <main class="content">
-        <h1>Properties</h1>
+        <h1>Setting</h1>
         <form class="form-grid">
           <!-- Left Column -->
           <div class="form-column">
-            <h3>Details</h3>
             <label for="propertyNameTH">Property Name (TH)*</label>
             <input type="text" id="propertyNameTH" placeholder="Property Name (TH)" />
-
-            <label for="propertyNameEN">Property Name (EN)*</label>
-            <input type="text" id="propertyNameEN" placeholder="Property Name (EN)" />
-
-            <label for="propertyType">Property Type</label>
-            <input type="text" id="propertyType" placeholder="Property Type" />
-
-            <label for="propertyCode">Property Code</label>
-            <input type="text" id="propertyCode" placeholder="Property Code" />
-
-            <label for="propertyGroup">Property Group*</label>
-            <select id="propertyGroup">
-              <option value="">Select Group</option>
-              <option value="Group 1">Group 1</option>
-              <option value="Group 2">Group 2</option>
-            </select>
-
-            <label for="about">About</label>
-            <textarea id="about" rows="4" placeholder="About"></textarea>
-
-            <label for="areaSize">Area Size</label>
-            <input type="text" id="areaSize" placeholder="Area Size" />
-
-            <label for="unitSize">Unit Size</label>
-            <input type="text" id="unitSize" placeholder="Unit Size" />
-
-            <label for="constructionBy">Construction By</label>
-            <input type="text" id="constructionBy" placeholder="Construction By" />
           </div>
 
           <!-- Right Column -->
           <div class="form-column">
-            <h3>Bank Account</h3>
-
             <label for="accountName">Account Name</label>
             <input type="text" id="accountName" placeholder="Account Name" />
-
-            <label for="accountType">Account Type*</label>
-            <select id="accountType">
-              <option value="">Select Type</option>
-              <option value="Savings">Savings</option>
-              <option value="Current">Current</option>
-            </select>
-
-            <label for="bankName">Bank Name*</label>
-            <select id="bankName">
-              <option value="">Select Bank</option>
-              <option value="Bank 1">Bank 1</option>
-              <option value="Bank 2">Bank 2</option>
-            </select>
-
-            <label for="bankBranch">Bank Branch</label>
-            <input type="text" id="bankBranch" placeholder="Bank Branch" />
-
-            <label for="billerId">Biller ID</label>
-            <input type="text" id="billerId" placeholder="Biller ID" />
-
-            <div class="switch-group">
-              <div class="switch-item">
-                <label class="switch-label">Active</label>
-                <label class="switch">
-                  <input type="checkbox" id="active">
-                  <span class="slider"></span>
-                </label>
-              </div>
-
-              <div class="switch-item">
-                <label class="switch-label">Fund Account</label>
-                <label class="switch">
-                  <input type="checkbox" id="fundAccount">
-                  <span class="slider"></span>
-                </label>
-              </div>
-            </div>
 
           </div>
         </form>
 
         <!-- Buttons -->
         <div class="form-buttons">
-          <button type="button" class="btn-cancel">Cancel</button>
-          <button type="submit" class="btn-submit">Submit</button>
+          <button type="clear" class="btn-clear">Clear</button>
+          <button type="search" class="btn-Search">Search</button>
         </div>
       </main>
     </div>

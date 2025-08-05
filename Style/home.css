@@ -111,7 +111,7 @@ textarea {
   margin-top: 24px;
 }
 
-.btn-cancel, .btn-submit {
+.btn-cancel, .btn-submit, .btn-clear, .btn-Search {
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
@@ -127,6 +127,15 @@ textarea {
 
 .btn-submit {
   background: #1890ff;
+  color: white;
+}
+.btn-clear {
+  background: #f5f5f5;
+  color: #333;
+  margin-right: 10px;
+}
+.btn-Search {
+   background: #1890ff;
   color: white;
 }
 .switch-item {
@@ -176,4 +185,31 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(22px);
+}
+/* ลบเส้นใต้และเปลี่ยนสีข้อความของลิงก์ในเมนูนำทาง */
+.sidebar nav ul li a {
+    text-decoration: none; /* ลบเส้นใต้ */
+    color: #ffffff;      /* เปลี่ยนสีข้อความให้เป็นสีขาว (หรือสีที่คุณต้องการ) */
+}
+
+/* กำหนดสีของไอคอน */
+.sidebar nav ul li a i {
+    color: #ffffff;      /* กำหนดสีไอคอนให้เป็นสีขาว (หรือสีที่คุณต้องการ) */
+}
+
+/* ทำให้ลิงก์ครอบคลุมพื้นที่ทั้งหมดของ li และจัด padding ให้สวยงาม */
+.sidebar nav ul li a {
+    display: block;      /* ทำให้ลิงก์มีขนาดเต็มพื้นที่ของ li */
+    padding: 10px 15px;  /* ปรับ padding ให้ได้ขนาดตามที่คุณต้องการ */
+}
+
+/* ถ้าต้องการให้มีพื้นหลังสีน้ำเงินเมื่อเมาส์ชี้ไปที่ลิงก์ (hover) */
+.sidebar nav ul li a:hover {
+    background-color: #004d99; /* เปลี่ยนสีพื้นหลังเมื่อเมาส์ชี้ */
+}
+
+/* สำหรับเมนูที่ถูกเลือก (active) */
+.sidebar nav ul li.active a {
+    color: #ffffff; /* กำหนดสีข้อความของเมนูที่ active */
+    background-color: #0066cc; /* กำหนดสีพื้นหลังของเมนูที่ active */
 }
