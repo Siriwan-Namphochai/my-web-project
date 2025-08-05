@@ -2,193 +2,187 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>Members</title>
+    <meta charset="UTF-8" />
+    <title>Members</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="Style/home.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="Style/home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-  <div class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo"></div>
-      <nav>
-        <ul>
-          <li>
-            <a href="Properties.html">
-              <i class="fa fa-home"></i> Properties
-            </a>
-          </li>
-          <li> 
-            <li class="active">
-            <a href="Member.html">
-              <i class="fa fa-users"></i> Members
-            </a>
-          </li>
-          <li> 
-            <a href="Settings.html">
-              <i class="fa fa-cogs"></i> Settings
-            </a>
-          </li>
-          <li> 
-            <a href="news-and-activities.html">
-              <i class="fa fa-bullhorn"></i>  News & Activities
-            </a>
-          </li>
-          <li> 
-            <a href="Promotion.html">
-              <i class="fa fa-gift"></i>  Promotion
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="logo"></div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fa fa-home"></i> Properties
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="Member.html">
+                            <i class="fa fa-users"></i> Members
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Settings.html">
+                            <i class="fa fa-cogs"></i> Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news-and-activities.html">
+                            <i class="fa fa-bullhorn"></i> News & Activities
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Promotion.html">
+                            <i class="fa fa-gift"></i> Promotion
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
 
-    <!-- Main Layout -->
-    <div class="main-layout">
-      <header class="header">
-        <div class="user-info">ad min (admin@gmail.com)</div>
-        <button id="btnLogout" type="button" class="btn-logout">
-          <i class="fa fa-sign-out-alt"></i> Log Out
-        </button>
-      </header>
+        <div class="main-layout">
+            <header class="header">
+                <div class="user-info">ad min (admin@gmail.com)</div>
+                <button id="btnLogout" type="button" class="btn-logout">
+                    <i class="fa fa-sign-out-alt"></i> Log Out
+                </button>
+            </header>
 
-
-      <main class="content">
-        <h1>Members</h1>
-        <form class="form-grid">
-          <!-- Left Column -->
-          <div class="form-column">
-            <label for="propertyNameTH">Property Name (TH)*</label>
-            <input type="text" id="propertyNameTH" placeholder="Property Name (TH)" />
-          </div>
-
-          <!-- Right Column -->
-          <div class="form-column">
-            <label for="accountName">Account Name</label>
-            <input type="text" id="accountName" placeholder="Account Name" />
-
-          </div>
+           <main class="content">
+    <h1>Members</h1>
+    
+    <div class="card">
+        <form class="search-form-grid">
+            <div class="form-column">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="Title" />
+            </div>
+            <div class="form-column">
+                <label for="date">Date</label>
+                <input type="date" id="date" />
+            </div>
+            <div class="form-column">
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="">Status</option>
+                    <option value="published">Published</option>
+                    <option value="draft">Draft</option>
+                </select>
+            </div>
         </form>
-
-        <!-- Buttons -->
         <div class="form-buttons">
-          <button type="clear" class="btn-clear">Clear</button>
-          <button type="search" class="btn-Search">Search</button>
+            <button type="button" class="btn-clear">Reset</button>
+            <button type="button" class="btn-Search">Search</button>
         </div>
-      </main>
     </div>
-  </div>
+    
+    <div class="card data-table-container">
+        <h2>Promotion</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Ordering</th>
+                    <th>Created Date</th>
+                    <th>DisplayAt</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>test2</td>
+                    <td>5</td>
+                    <td>2021-06-10</td>
+                    <td>Home Screen</td>
+                    <td><span class="status-badge published">Published</span></td>
+                    <td><i class="fa fa-trash"></i></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="pagination">
+            <span>Total 1 items</span>
+            <div class="pagination-controls">
+                <button>&lt;</button>
+                <span>1</span>
+                <button>&gt;</button>
+                <select>
+                    <option>10 / page</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</main>
+        </div>
+    </div>
 
-  <!-- Firebase Script (v12 Modular) -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-    import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAq7rHIZMiVMOEFiDa6uohhjhFtRZFJypc",
-      authDomain: "my-demo-project-27c29.firebaseapp.com",
-      databaseURL: "https://my-demo-project-27c29-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "my-demo-project-27c29",
-      storageBucket: "my-demo-project-27c29.appspot.com",
-      messagingSenderId: "841978784478",
-      appId: "1:841978784478:web:a31a537d952b08a33c304f"
-    };
+        const firebaseConfig = {
+            apiKey: "AIzaSyAq7rHIZMiVMOEFiDa6uohhjhFtRZFJypc",
+            authDomain: "my-demo-project-27c29.firebaseapp.com",
+            databaseURL: "https://my-demo-project-27c29-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "my-demo-project-27c29",
+            storageBucket: "my-demo-project-27c29.appspot.com",
+            messagingSenderId: "841978784478",
+            appId: "1:841978784478:web:a31a537d952b08a33c304f"
+        };
 
-    const app = initializeApp(firebaseConfig);
-    const database = getDatabase(app);
-    document.getElementById("btnLogout").addEventListener("click", function () {
-      // เปลี่ยนหน้าเว็บไปยัง Login.html
-      window.location.href = "Login.html";
-    });
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
 
-    document.querySelector(".btn-submit").addEventListener("click", async function (e) {
-      e.preventDefault();
+        // อ้างอิงถึง Element ที่จะใช้แสดงข้อมูล
+        const propertyList = document.getElementById("property-list");
 
-      const nameTH = document.getElementById("propertyNameTH").value.trim();
-      const nameEN = document.getElementById("propertyNameEN").value.trim();
-      const propertyType = document.getElementById("propertyType").value.trim();
-      const propertyCode = document.getElementById("propertyCode").value.trim();
-      const propertyGroup = document.getElementById("propertyGroup").value.trim();
-      const about = document.getElementById("about").value.trim();
-      const areaSize = document.getElementById("areaSize").value.trim();
-      const unitSize = document.getElementById("unitSize").value.trim();
-      const constructionBy = document.getElementById("constructionBy").value.trim();
-      const accountName = document.getElementById("accountName").value.trim();
-      const accountType = document.getElementById("accountType").value;
-      const bankName = document.getElementById("bankName").value;
-      const bankBranch = document.getElementById("bankBranch").value.trim();
-      const billerId = document.getElementById("billerId").value.trim();
-      const active = document.getElementById("active").checked;
-      const fundAccount = document.getElementById("fundAccount").checked;
+        // ดึงข้อมูลจาก "Details"
+        const detailsRef = ref(database, 'Details');
 
-      if (!nameTH || !nameEN) {
-        alert("กรุณากรอก Property Name ทั้งภาษาไทยและภาษาอังกฤษ");
-        return;
-      }
+        onValue(detailsRef, (snapshot) => {
+            const data = snapshot.val();
+            propertyList.innerHTML = ''; // ล้างข้อมูลเก่าออกก่อน
 
-      if (!propertyGroup) {
-        alert("กรุณากรอก Property Group");
-        return;
-      }
-
-      if (!accountType) {
-        alert("กรุณากรอก Account Type");
-        return;
-      }
-      if (!bankName) {
-        alert("กรุณากรอก Bank Name");
-        return;
-      }
-
-      const createdAt = new Date().toISOString();
-
-      const detailData = {
-        nameTH,
-        nameEN,
-        propertyType,
-        propertyCode,
-        propertyGroup,
-        about,
-        areaSize,
-        unitSize,
-        constructionBy,
-        createdAt
-      };
-
-      const bank_accountData = {
-        accountName,
-        accountType,
-        bankName,
-        bankBranch,
-        billerId,
-        active,
-        fundAccount,
-        createdAt
-      };
-
-      try {
-        // Create new refs
-        const detailRef = push(ref(database, "Details"));
-        const bankRef = push(ref(database, "Bank Account"));
-
-        // Save both in parallel
-        await Promise.all([
-          set(detailRef, detailData),
-          set(bankRef, bank_accountData)
-        ]);
-
-        alert("บันทึกข้อมูลสำเร็จ");
-        document.querySelector("form.form-grid").reset();
-
-      } catch (error) {
-        alert("เกิดข้อผิดพลาด: " + error.message);
-      }
-    });
-  </script>
+            if (data) {
+                Object.values(data).forEach((item) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.nameTH || ''}</td>
+                        <td>${item.nameEN || ''}</td>
+                        <td>${item.propertyType || ''}</td>
+                        <td>${item.propertyCode || ''}</td>
+                        <td>${item.propertyGroup || ''}</td>
+                        <td>${item.about || ''}</td>
+                        <td>${item.createdAt ? new Date(item.createdAt).toLocaleString() : ''}</td>
+                    `;
+                    propertyList.appendChild(row);
+                });
+            } else {
+                propertyList.innerHTML = '<tr><td colspan="7">No data available</td></tr>';
+            }
+        });
+        
+        // Logout function
+        document.getElementById("btnLogout").addEventListener("click", function () {
+            window.location.href = "Login.html";
+        });
+        
+        // Event Listeners for Clear and Search buttons (ไม่มีฟังก์ชันการทำงานจริง ต้องเขียนเพิ่มเอง)
+        document.querySelector(".btn-clear").addEventListener("click", function () {
+            // โค้ดสำหรับ Clear
+            console.log("Clear button clicked");
+        });
+        
+        document.querySelector(".btn-Search").addEventListener("click", function () {
+            // โค้ดสำหรับ Search
+            console.log("Search button clicked");
+        });
+    </script>
 </body>
 
 </html>
