@@ -1,0 +1,101 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAq7rHIZMiVMOEFiDa6uohhjhFtRZFJypc",
+  authDomain: "my-demo-project-27c29.firebaseapp.com",
+  databaseURL: "https://my-demo-project-27c29-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "my-demo-project-27c29",
+  storageBucket: "my-demo-project-27c29.appspot.com",
+  messagingSenderId: "841978784478",
+  appId: "1:841978784478:web:a31a537d952b08a33c304f"
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+document.getElementById("btnLogout").addEventListener("click", function () {
+  window.location.href = "Login.html";
+});
+
+document.querySelector(".btn-submit").addEventListener("click", async function (e) {
+  e.preventDefault();
+
+  const nameTH = document.getElementById("propertyNameTH").value.trim();
+  const nameEN = document.getElementById("propertyNameEN").value.trim();
+  const propertyType = document.getElementById("propertyType").value.trim();
+  const propertyCode = document.getElementById("propertyCode").value.trim();
+  const propertyGroup = document.getElementById("propertyGroup").value.trim();
+  const about = document.getElementById("about").value.trim();
+  const areaSize = document.getElementById("areaSize").value.trim();
+  const unitSize = document.getElementById("unitSize").value.trim();
+  const constructionBy = document.getElementById("constructionBy").value.trim();
+  const accountName = document.getElementById("accountName").value.trim();
+  const accountType = document.getElementById("accountType").value;
+  const bankName = document.getElementById("bankName").value;
+  const bankBranch = document.getElementById("bankBranch").value.trim();
+  const billerId = document.getElementById("billerId").value.trim();
+  const active = document.getElementById("active").checked;
+  const fundAccount = document.getElementById("fundAccount").checked;
+
+  if (!nameTH || !nameEN) {
+    alert("กรุณากรอก Property Name ทั้งภาษาไทยและภาษาอังกฤษ");
+    return;
+  }
+
+  if (!propertyGroup) {
+    alert("กรุณากรอก Property Group");
+    return;
+  }
+
+  if (!accountType) {
+    alert("กรุณากรอก Account Type");
+    return;
+  }
+  if (!bankName) {
+    alert("กรุณากรอก Bank Name");
+    return;
+  }
+
+  const createdAt = new Date().toISOString();
+
+  const detailData = {
+    nameTH,
+    nameEN,
+    propertyType,
+    propertyCode,
+    propertyGroup,
+    about,
+    areaSize,
+    unitSize,
+    constructionBy,
+    createdAt
+  };
+
+  const bank_accountData = {
+    accountName,
+    accountType,
+    bankName,
+    bankBranch,
+    billerId,
+    active,
+    fundAccount,
+    createdAt
+  };
+
+  try {
+    const detailRef = push(ref(database, "Details"));
+    const bankRef = push(ref(database, "Bank Account"));
+
+    await Promise.all([
+      set(detailRef, detailData),
+      set(bankRef, bank_accountData)
+    ]);
+
+    alert("บันทึกข้อมูลสำเร็จ");
+    document.querySelector("form.form-grid").reset();
+
+  } catch (error) {
+    alert("เกิดข้อผิดพลาด: " + error.message);
+  }
+});
