@@ -60,7 +60,13 @@
           <i class="fa fa-sign-out-alt"></i> Log Out
         </button>
       </header>
-
+<script>
+  document.getElementById("btnLogout").addEventListener("click", function () {
+    sessionStorage.clear();
+    localStorage.clear();
+    window.location.href = "login.html";
+  });
+</script>
 
       <main class="content">
         <h1>Properties</h1>
